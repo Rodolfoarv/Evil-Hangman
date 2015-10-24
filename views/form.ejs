@@ -1,0 +1,39 @@
+
+<div class="container">
+  <div class="page-header text-center">
+    <a href="/"> <h1><%= title %> <small> Can you defeat me? </small> </h1> </a>
+  </div>
+  <form action="/info" method="post" class="form-horizontal">
+    <div class="form-group">
+      <label for="nameField" class="col-xs-2"> Name: </label>
+      <div class="col-xs-10">
+        <input type="text" class="form-control" id="nameField" name="name" placeholder="What is your name?" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lengthField" class="col-xs-2"> Word length: </label>
+      <div class="col-xs-10">
+        <input type="text" class="form-control" id="lengthField" placeholder="What is the word length?" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="livesField" class="col-xs-2"> Number of lives: </label>
+      <div class="col-xs-10">
+        <input type="text" class="form-control" id="livesField" placeholder="Specify the number of lives" />
+      </div>
+    </div>
+
+    <div class="col-xs-10 col-xs-offset-2">
+      <button type="submit" class="btn btn-primary"> Submit </button>
+      <button type="reset" class="btn btn-default"> Reset </button>
+    </div>
+
+
+
+  </form>
+
+
+
+</div>
