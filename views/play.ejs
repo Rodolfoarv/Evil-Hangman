@@ -2,4 +2,22 @@
   <div class="page-header text-center">
     <h1><%= title %> <small> Can you defeat me? </small> </h1>
   </div>
-  
+  <div class="row">
+    <div class="col-xs-6">
+      <p> Hola! </p>
+    </div>
+    <div class="col-xs-6">
+      <div class="row">
+        <% letters.forEach(function(letter){ %>
+          <div class="col-xs-1">
+          <button type="button" class="btn btn-primary btn-lg " > <%= letter %> </button>
+        </div>
+        <% }); %>
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>

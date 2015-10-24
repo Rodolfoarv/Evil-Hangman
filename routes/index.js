@@ -17,7 +17,10 @@ router.post('/info', function(req,res){
 });
 
 router.get('/play', function(req,res){
-  res.render('play', {title: 'Hangman!'});
+  var lettersArray=['A','B','C','D','E','F','G','H','I','J','K','L','M',
+               'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+  res.render('play', {title: 'Hangman!',
+                      letters: lettersArray});
 });
 
 module.exports = router;
