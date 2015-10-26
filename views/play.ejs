@@ -13,7 +13,7 @@
       <div class="row">
         <% letters.forEach(function(letter){ %>
           <div class="col-xs-2">
-          <button type="button" onclick="getLetter(this.id)" class="btn btn-primary btn-lg" id="<%=letter%>" > <%= letter %> </button>
+          <button type="button" onclick="checkLetter(this.id,'<%=wordsArr%>')" class="btn btn-primary btn-lg" id="<%=letter%>" > <%= letter %> </button>
         </div>
         <% }); %>
       </div>
