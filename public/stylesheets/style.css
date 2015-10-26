@@ -9,5 +9,15 @@ a {
 p{
     display:inline;
     padding:5px;
-    
+
+}
+
+.modal-header, h4, .close {
+    background-color: #00B7FF;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+}
+.modal-footer {
+    background-color: #f9f9f9;
 }

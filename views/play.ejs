@@ -31,5 +31,57 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-xs-12 text-center">
+        <button type="button" class="btn btn-danger btn-lg" id="myBtn">New Game</button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header" style="padding:35px 50px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4><span class="glyphicon glyphicon-pencil"></span> New game</h4>
+              </div>
+              <div class="modal-body" style="padding:40px 50px;">
+                <form action="/info" method="post" role="form">
+                  <div class="form-group">
+                    <label for="nameField"> <span class="glyphicon glyphicon-user"></span> Username: </label>
+                    <input type="text" class="form-control" id="nameField" name="name" placeholder="What is your name?" />
+                  </div>
+                  <div class="form-group">
+                    <label for="lengthField"><span class="glyphicon glyphicon-eye-open"></span> Word Length:</label>
+                    <input type="number" class="form-control" id="lengthField" name="wordLength" placeholder="What is the word length?" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="livesField"><span class="glyphicon glyphicon-text-width"></span> Number of lives:</label>
+                    <input type="number" class="form-control" id="livesField" name="numberOfLives" placeholder="Specify the number of lives" />
+                  </div>
+
+                    <button type="submit" class="btn btn-info btn-block"><span class="glyphicon glyphicon-off"></span> Submit</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      <script>
+      $(document).ready(function(){
+          $("#myBtn").click(function(){
+              $("#myModal").modal();
+          });
+      });
+      </script>
+    </div>
+  </div>
+
+
+
 
 </div>
