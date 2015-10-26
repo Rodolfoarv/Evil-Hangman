@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/form', function(req, res, next) {
-  res.render('form', { title: 'Hangman!' });
+  res.render('form', { title: 'Hangman!', lengthAlert: 'alert hide',livesAlert: 'alert hide'});
 });
 
 router.post('/info', function(req,res){
@@ -17,7 +17,13 @@ router.post('/info', function(req,res){
   req.session.numberOfLives = req.body.numberOfLives;
   req.session.wordsArray = [];
   if(req.session.wordLength > 24){
-    console.log('Error');
+    res.render('form', {title: 'Hangman!',
+                        lengthAlert: '',
+                        livesAlert:'alert hide'});
+  }else if(req.session.numberOfLives < 1){
+    res.render('form', {title: 'Hangman!',
+                        lengthAlert: 'alert hide',
+                        livesAlert:''});
   }else{
     res.redirect('/play');
   }

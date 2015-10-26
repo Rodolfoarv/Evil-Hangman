@@ -28,7 +28,8 @@ function getLettersPosition(word,letter,arr){
 }
 
 function checkLetter(id,arr,lives){
-  document.getElementById(id).className = "btn btn-danger btn-lg"
+  document.getElementById(id).className = "btn btn-danger btn-lg disabled"
+
 
   if (listOfWords.length == 0){
     listOfWords = arr.split(',');
@@ -90,12 +91,3 @@ function checkLetter(id,arr,lives){
       }
     }
 }
-
-
-
-
-/*
-console.log(document.getElementById('secret1'));
-console.log(document.getElementById(id).innerHTML);
-document.getElementById('secret1').innerHTML = "New text";
-document.getElementById('A').style.backgroundColor = "yellow";*/
