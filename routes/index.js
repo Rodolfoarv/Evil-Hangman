@@ -16,14 +16,20 @@ router.post('/info', function(req,res){
   req.session.wordLength = req.body.wordLength;
   req.session.numberOfLives = req.body.numberOfLives;
   req.session.wordsArray = [];
-  console.log(req.session);
-  res.redirect('/play');
+  if(req.session.wordLength > 24){
+    console.log('Error');
+  }else{
+    res.redirect('/play');
+  }
+
 });
 
 router.get('/play', function(req,res){
    var fs = require('fs');
    var path = require('path');
    var file = path.join(__dirname, 'dictionary.txt');
+
+
 
    fs.readFile(file,function(err,words){
      if (err) throw err;
@@ -38,7 +44,7 @@ router.get('/play', function(req,res){
          wordsArray.push(word);
        }
      }
-     
+
      var lettersArray=['A','B','C','D','E','F','G','H','I','J','K','L','M',
                   'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
      res.render('play', {title: 'Hangman!',

@@ -3,6 +3,9 @@
   <div class="page-header text-center">
     <a href="/"> <h1><%= title %> <small> Can you defeat me? </small> </h1> </a>
   </div>
+  <div id="formAlert" class="alert alert-danger alert-dismissable alert hide">
+    The length of the word is too long.
+  </div>
   <form action="/info" method="post" class="form-horizontal">
     <div class="form-group">
       <label for="nameField" class="col-xs-2"> Name: </label>
