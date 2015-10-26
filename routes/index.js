@@ -1,3 +1,11 @@
+/*----------------------------------------------------------
+ * Exam 2: Evil Hangman
+ * Date: 26-Oct-2015
+ * Authors:
+ *           A01169701 Rodolfo Andrés Ramírez Valenzuela
+ *
+ *----------------------------------------------------------*/
+
 'use strict';
 var express = require('express');
 var router = express.Router();

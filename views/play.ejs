@@ -1,3 +1,11 @@
+<!--
+* Exam 2: Evil Hangman
+* Date: 26-Oct-2015
+* Authors:
+*           A01169701 Rodolfo Andrés Ramírez Valenzuela
+*
+-->
+
 <div class="container">
   <div class="page-header text-center">
     <a href="/"> <h1><%= title %> <small> Can you defeat me? </small> </h1> </a>
@@ -7,9 +15,9 @@
   </div>
   <div class="row">
     <div class="col-xs-6 text-center">
-      <h3> You have </h3>
+      <h3 id=livesLeftHeader> You have </h3>
       <p id="livesLeft" class="lives text-center"> <%= session.numberOfLives %></p>
-      <h3> lives left </h3>
+      <h3 id=livesLeftFooter> lives left </h3>
     </div>
     <div class="col-xs-6">
       <div class="row">

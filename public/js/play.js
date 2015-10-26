@@ -1,9 +1,19 @@
+/*----------------------------------------------------------
+ * Exam 2: Evil Hangman
+ * Date: 26-Oct-2015
+ * Authors:
+ *           A01169701 Rodolfo Andrés Ramírez Valenzuela
+ *
+ *----------------------------------------------------------*/
+
 'use strict';
 var listOfWords = [];
 var matchResult = false;
 var numberOfTriesBeforeLosing;
 var numberOfLives = 0;
 var lettersMissing;
+var lettersArray=['A','B','C','D','E','F','G','H','I','J','K','L','M',
+             'N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 
 function getLetter(id){
   return document.getElementById(id).innerHTML.toLowerCase().trim();
@@ -28,6 +38,12 @@ function getLettersPosition(word,letter,arr){
   }
 }
 
+function hideLetters(){
+  for (var k = 0; k < lettersArray.length; k++) {
+    document.getElementById(lettersArray[k]).className = "btn btn-lg disabled"
+  }
+}
+
 function checkLetter(id,arr,lives){
   document.getElementById(id).className = "btn btn-danger btn-lg disabled"
   var letter = getLetter(id);
@@ -38,14 +54,32 @@ function checkLetter(id,arr,lives){
     lettersMissing = listOfWords[0].length;
     console.log(matchResult);
   }
-  var randomIndex = Math.floor(Math.random() * listOfWords.length) + 1;
-  var randomWord = listOfWords[randomIndex];
+
   if (lettersMissing === 1 && matchResult === false){ //this means the hangman will win
-    randomWord = listOfWords[randomWord+1];
     numberOfLives --
     discardLetter(letter);
     console.log(listOfWords);
     document.getElementById('livesLeft').innerHTML = numberOfLives;
+    if (numberOfLives == 0){
+      // The evil hangman wins, disabling buttons and displaying the word
+      var randomIndex = Math.floor(Math.random() * listOfWords.length-1) + 1;
+      //Get a random word from the cheating array and display as red
+      var randomWord = listOfWords[randomIndex];
+      for (var i = 0; i < randomWord.length; i++) {
+        var id = 'secret' + i;
+        if (document.getElementById(id).innerHTML.trim() === '_'){
+          document.getElementById(id).innerHTML = randomWord[i];
+          document.getElementById(id).style.color = 'red';
+        }
+      }
+      document.getElementById('livesLeft').innerHTML = 'You have lost!';
+      document.getElementById('livesLeft').style.fontSize = '5em';
+      document.getElementById('livesLeftHeader').innerHTML = '';
+      document.getElementById('livesLeftFooter').innerHTML = '';
+      hideLetters();
+
+
+    }
   }else{
 
         var auxiliaryListOfWords = [];
@@ -96,8 +130,11 @@ function checkLetter(id,arr,lives){
             lettersMissing--;
             document.getElementById(id).innerHTML = letter;
             if (lettersMissing == 0){
-              document.getElementById('livesLeft').innerHTML = 'You have won!!!';
-              console.log('you have won!');
+              document.getElementById('livesLeft').innerHTML = 'You have won!';
+              document.getElementById('livesLeft').style.fontSize = '5em';
+              document.getElementById('livesLeftHeader').innerHTML = '';
+              document.getElementById('livesLeftFooter').innerHTML = '';
+              hideLetters();
             }
           }
         }
