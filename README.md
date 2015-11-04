@@ -25,3 +25,7 @@ Once the app is running you can access it from: <http://localhost:3000/>
 ## Authors
 
 - Rodolfo Andrés Ramírez Valenzuela
+
+## License
+
+See [LICENSE] (https://github.com/Rodolfoarv/Evil-Hangman/blob/master/LICENSE)
