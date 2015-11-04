@@ -11,7 +11,7 @@ The application lets you play the hangman game, it uses the following technologi
 + Javascript
 + CSS and HTML
 
-## Installing teh application
+## Installing the application
     # Setup the project
     Clone the repository and execute the following commands:
     sudo npm install
